@@ -17,7 +17,7 @@ public class ProductServiceImpl  implements  ProductService{
     private ProductRepository productRepository;
     @Override
     public long addProduct(ProductRequest productRequest) {
-        log.info("Adding product ...");
+        log.info("Adding product ......");
         Product product=Product
                 .builder()
                 .productName(productRequest.getName())

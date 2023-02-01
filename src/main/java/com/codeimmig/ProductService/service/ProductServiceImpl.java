@@ -26,7 +26,6 @@ public class ProductServiceImpl  implements  ProductService{
                 .build();
         productRepository.save(product);
         log.info("Product created ");
-        String b;
         return product.getProductId();
     }
 

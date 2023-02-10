@@ -14,12 +14,13 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+   // @PreAuthorize("hasAnyAuthority('Admin')")
     @PostMapping
     public ResponseEntity<Long> addProduct(@RequestBody ProductRequest productRequest) {
         long productId = productService.addProduct(productRequest);
         return new ResponseEntity<>(productId, HttpStatus.CREATED);
     }
-
+//@PreAuthorize("hasAnyAuthority('Admin') || hasAnyAuthority('Customer') || hasAnyAuthority('SCOPE_internal') ")
     @GetMapping("/{id}")
     public ResponseEntity<ProductResponse> getProductById(@PathVariable("id") Long productId) {
         ProductResponse productResponse = productService.getProductById(productId);

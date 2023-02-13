@@ -13,7 +13,7 @@ spring:
   application:
     name: PRODUCT-SERVICE
   config:
-    import: configserver:http://localhost:9296
+    import: configserver:${CONFIG_SERVER_URL:http://localhost:9296}
 
 #  security:
 #    oauth2:
@@ -30,4 +30,8 @@ spring:
 #    service-url:
 #      defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka}
 
+#okta:
+#  oauth2:
+#    issuer: https://dev-86929098.okta.com/oauth2/default
+#    audience: api://default
 
